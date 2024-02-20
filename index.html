@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Femme Phile | Watermarking Tool</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <input type="file" id="imageInput" accept="image/*" multiple>
+    <div>
+      <label for="watermarkText">Watermark Text:</label>
+      <input type="text" id="watermarkText" value="@lafemmephile" />
+    </div>
+    <button id="applyWatermark">Apply Watermark</button>
+    <div id="progressText" style="margin-top: 10px;"></div>
+    <div id="progressContainer" style="display: none;">
+      <div id="progressBar"></div>
+    </div>
+    <canvas id="canvas"></canvas>
+    <script src="watermark.js"></script>
+    <script>
+      // Clear the selected files on page refresh
+      window.onload = function() {
+        document.getElementById('imageInput').value = '';
+      };
+    </script>
+  </body>
+</html>
